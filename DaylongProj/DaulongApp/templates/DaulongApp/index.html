@@ -1,0 +1,25 @@
+{% extends 'DaulongApp/base.html' %}
+{% block navbar %}
+{% endblock navbar %}
+
+{% block content %}
+
+<h1>
+    {% block header %}
+    {% endblock header %}
+</h1>
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">login</a><p>Or click <a href="{% url 'newUser">here</a>to create an account.</p>
+{% endif %}
+
+
+<a href="{% url 'newUser' %}"></a>
+
+
+
+
+{% endblock content %}

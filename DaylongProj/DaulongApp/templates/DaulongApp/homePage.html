@@ -1,0 +1,28 @@
+{% extends 'DaulongApp/base.html' %}
+
+
+{% block content %}
+
+
+{% if urEntries %}
+<div class="gridContainer">
+    {% for eachEntry in urEntries %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ eachEntry.picture }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachEntry.name }}</h5>
+            <p
+                    class="card-text">{{ eachEntry.description }}<br> Posted on:{{ eachEntry.dateCreated }}<br>By: {{ eachEntry.creatorOfRecipe }}
+                <a href="{% url 'edit' eachEntry.id %}">edit</a>
+
+
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h1>No Recipes</h1>
+{% endif %}
+
+{% endblock content %}

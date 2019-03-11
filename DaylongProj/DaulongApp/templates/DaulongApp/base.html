@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'BootCRUDApp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'BootCRUDApp/css/base.css' %}">
+    <script src="{% static 'BootCRUDApp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'BootCRUDApp/js/bootstrap.js' %}"></script>
+</head>
+<body>
+{% block navbar %}
+<a href="{% url 'homePage' %}">Home</a>
+/
+<a href="{% url 'allRecipes' %}">Discover Recipes</a>
+/
+<a href="{% url 'newRecipes' %}">Upload New Recipe</a>
+/
+<a href="{% url 'profile' %}">Profile</a>
+
+{% endblock navbar %}
+
+
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>
